@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: SDB::SDB</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">SDB::SDB</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/sdb/sdb_rb.html">
+                lib/sdb/sdb.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Allows for SimpleDB API calls to be made using the given Access Key, Secret
+Key and endpoint.
+</p>
+<p>
+For more details concerning the various operations see the official Amazon
+Documentation <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/GettingStartedGuide/">here</a>.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000012">batch_put_attributes</a>&nbsp;&nbsp;
+      <a href="#M000004">create_domain</a>&nbsp;&nbsp;
+      <a href="#M000010">delete_attributes</a>&nbsp;&nbsp;
+      <a href="#M000007">delete_domain</a>&nbsp;&nbsp;
+      <a href="#M000006">domain_metadata</a>&nbsp;&nbsp;
+      <a href="#M000009">get_attributes</a>&nbsp;&nbsp;
+      <a href="#M000005">list_domains</a>&nbsp;&nbsp;
+      <a href="#M000003">new</a>&nbsp;&nbsp;
+      <a href="#M000011">put_attributes</a>&nbsp;&nbsp;
+      <a href="#M000008">select</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000003.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000003.html');return false;">
+          <span class="method-name">new</span><span class="method-args">( access_key_id, secret_key, retry_delays=[0.5, 2], base_url='http://sdb.amazonaws.com/' )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <ul>
+<li>&#8216;access_key_id&#8217; : String representing your Access Key Id for
+SimpleDB.
+
+</li>
+<li>&#8216;secret_key&#8217; : String representing the Secret Key for the
+Access Key Id supplied.
+
+</li>
+<li>&#8216;retry_delays&#8217; : Array of &quot;seconds&quot; indicating both
+the number of retries and the delay between retries. A retry will initiate
+on ANY error response from SimpleDB.
+
+</li>
+<li>&#8216;base_url&#8217; : String representing the endpoint by which to
+connect to SimpleDB.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000012.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000012.html');return false;">
+          <span class="method-name">batch_put_attributes</span><span class="method-args">( domain_name, items )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the domain name and an array of <a
+href="Item.html">Item</a> objects, returns an <a
+href="SDBResponse.html">SDBResponse</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_BatchPutAttributes.html">here</a>
+for more information about the Batch Put Attributes SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000004.html');return false;">
+          <span class="method-name">create_domain</span><span class="method-args">( domain_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the domain name, returns an <a
+href="SDBResponse.html">SDBResponse</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_CreateDomain.html">here</a>
+for more information about the CreateDomain SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000010.html');return false;">
+          <span class="method-name">delete_attributes</span><span class="method-args">( domain_name, item_name, attributes=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+iven a string for the domain name, item name and an optional array of <a
+href="Attribute.html">Attribute</a> objects, returns an <a
+href="SDBResponse.html">SDBResponse</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_DeleteAttributes.html">here</a>
+for more information about the DeleteAttributes SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000007.html');return false;">
+          <span class="method-name">delete_domain</span><span class="method-args">( domain_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the domain name, returns an <a
+href="SDBResponse.html">SDBResponse</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_DeleteDomain.html">here</a>
+for more information about the DeleteDomain SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000006.html');return false;">
+          <span class="method-name">domain_metadata</span><span class="method-args">( domain_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the domain name, returns a <a
+href="DomainMetadata.html">DomainMetadata</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_DomainMetadata.html">here</a>
+for more information about the <a
+href="DomainMetadata.html">DomainMetadata</a> SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000009.html');return false;">
+          <span class="method-name">get_attributes</span><span class="method-args">( domain_name, item_name, attributes=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the domain name, item name and an optional array of <a
+href="Attribute.html">Attribute</a> objects, returns an <a
+href="Item.html">Item</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_GetAttributes.html">here</a>
+for more information about the GetAttributes SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000005.html');return false;">
+          <span class="method-name">list_domains</span><span class="method-args">( maxResults=100, next_token=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given an optional result set size and next token returns a <a
+href="DomainList.html">DomainList</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_ListDomains.html">here</a>
+for more information about the ListDomains SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000011.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000011.html');return false;">
+          <span class="method-name">put_attributes</span><span class="method-args">( domain_name, item_name, attributes=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the domain name, item name and an optional array of <a
+href="Attribute.html">Attribute</a> objects, returns an <a
+href="SDBResponse.html">SDBResponse</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_PutAttributes.html">here</a>
+for more information about the PutAttributes SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="SDB.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('SDB.src/M000008.html');return false;">
+          <span class="method-name">select</span><span class="method-args">( expression, next_token=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a string for the query expression and an optional next token, returns
+an <a href="ItemList.html">ItemList</a>. Click <a
+href="http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_Select.html">here</a>
+for more information about the Select SimpleDB operation.
+</p>
+<p>
+raises an <a href="SDBException.html">SDBException</a> if the call returns
+an error code.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

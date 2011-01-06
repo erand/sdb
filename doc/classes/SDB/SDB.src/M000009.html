@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_attributes (SDB::SDB)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sdb/sdb.rb, line 143</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_attributes</span>( <span class="ruby-identifier">domain_name</span>, <span class="ruby-identifier">item_name</span>, <span class="ruby-identifier">attributes</span>=<span class="ruby-keyword kw">nil</span> ) 
+      <span class="ruby-identifier">sdb_response_xml</span> = <span class="ruby-identifier">execute_with_retries</span>( <span class="ruby-constant">Request</span><span class="ruby-operator">::</span><span class="ruby-constant">GetAttributesRequest</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">domain_name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">item_name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">attributes</span>, <span class="ruby-ivar">@access_key_id</span>, <span class="ruby-ivar">@secret_key</span> ) )      
+      <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">build_from_xml_document</span>( <span class="ruby-identifier">item_name</span>, <span class="ruby-identifier">sdb_response_xml</span> )       
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">error_code</span> 
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">SDBException</span>.<span class="ruby-identifier">build_from_xml_document</span>( <span class="ruby-identifier">sdb_response_xml</span> ), <span class="ruby-identifier">item</span>.<span class="ruby-identifier">error_message</span>
+      <span class="ruby-keyword kw">else</span> 
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">item</span>
+      <span class="ruby-keyword kw">end</span>      
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

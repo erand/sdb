@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_s (SDB::DomainMetadata)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sdb/domain_metadata.rb, line 40</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>   
+      <span class="ruby-identifier">result</span>  = <span class="ruby-value str">&quot;Domain Metadata:\n&quot;</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tItem Count: &quot;</span>                  <span class="ruby-operator">+</span> <span class="ruby-ivar">@item_count</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>                    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@item_count</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tItem Names Size Bytes: &quot;</span>       <span class="ruby-operator">+</span> <span class="ruby-ivar">@item_names_size_bytes</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@item_names_size_bytes</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tAttribute Name Count: &quot;</span>        <span class="ruby-operator">+</span> <span class="ruby-ivar">@attribute_name_count</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@attribute_name_count</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tAttribute Names Size Bytes: &quot;</span>  <span class="ruby-operator">+</span> <span class="ruby-ivar">@attribute_names_size_bytes</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@attribute_names_size_bytes</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tAttribute Value Count: &quot;</span>       <span class="ruby-operator">+</span> <span class="ruby-ivar">@attribute_value_count</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@attribute_value_count</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tAttribute Values Size Bytes: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@attribute_values_size_bytes</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@attribute_values_size_bytes</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\tTimestamp: &quot;</span>                   <span class="ruby-operator">+</span> <span class="ruby-ivar">@timestamp</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>                     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@timestamp</span>
+      
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword kw">super</span>
+      
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

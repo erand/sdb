@@ -1,0 +1,38 @@
+
+SimpleDB Ruby Client Library v1.0
+    * Ruby Client Library to interface with SimpleDB.
+    * Based on the [2009-04-15] API version.
+
+
+What's included
+    * All Ruby Client code can be found in the 'lib' directory.
+    * Unit Tests and sample code using this library can be found 
+      in the 'test' directory.
+    * The 'doc' directory contains the RDoc for all the 'lib' directory
+      sources.
+
+
+Prerequisites
+    * You must have a valid Amazon Web Services developer account.
+    * You must be signed up to use SimpleDB service (sdb.amazonaws.com).
+    * Requires Ruby 1.8.5 or later.
+
+
+Using this Library
+    * The main class is SDB::SDB.
+
+
+Running the Sample
+    * To run the Unit Tests or the Sample you need to insert your
+      Access Key Id and Secret Id in the following files:
+         test/sdb_base_testcase.rb
+         test/test.rb
+
+    * Unit Tests
+    * To run the Unit Tests use the following:
+         ruby test/sdb_unit_test_suite.rb
+
+    * Sample
+    * To run the standard tests use the following:
+         ruby test/test.rb
+         
