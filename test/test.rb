@@ -15,7 +15,7 @@ $: << File.expand_path( File.dirname(__FILE__) + '../../lib/' )
 require 'sdb/sdb'
 require 'test/test_sdb'
 
-sdb = SDB::SDB.new( 'ACCESS_KEY', 'SECRET_KEY' );
+sdb = SDB::SDB.new( ENV['AWS_KEY'], ENV['AWS_SECRET_KEY'] );
 
 puts "Starting SDB-Ruby Test...."
 puts ""

@@ -20,7 +20,7 @@ module SDB
   module Request #:nodoc: all
     class PutAttributesRequest < SDBRequest
       								           
-      def initialize( domain_name, item_name, attributes, access_key_id, secret_key )
+      def initialize( domain_name, item_name, attributes, expected, access_key_id, secret_key )
         super( 'PutAttributes', access_key_id, secret_key )
 
         add_parameter( 'DomainName',  domain_name.to_s )       
@@ -31,6 +31,15 @@ module SDB
             add_parameter( 'Attribute.' + index.to_s + '.Name',     attribute.name )
             add_parameter( 'Attribute.' + index.to_s + '.Value',    attribute.value )
             add_parameter( 'Attribute.' + index.to_s + '.Replace',  attribute.replace ) if attribute.replace
+          end
+        end
+        if expected
+          k, v = expected.first
+          add_parameter( 'Expected.0.Name',     k )
+          if v == :exists
+            add_parameter( 'Expected.0.Exists',    "true" )
+          else
+            add_parameter( 'Expected.0.Value',    v )
           end
         end
                     

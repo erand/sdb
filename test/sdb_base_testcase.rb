@@ -20,7 +20,7 @@ class SDB_Base_TestCase < Test::Unit::TestCase
 
   protected  
   def create_sdb()
-    SDB::SDB.new( 'My Access Key Id', 'My Secret Key' )
+    SDB::SDB.new( ENV['AWS_KEY'], ENV['AWS_SECRET_KEY'] )
   end
   
   

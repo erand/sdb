@@ -172,10 +172,13 @@ module SDB
     # Given a string for the domain name, item name and an optional array of Attribute objects, returns an SDBResponse.
     # Click here[http://docs.amazonwebservices.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/index.html?SDB_API_PutAttributes.html]
     # for more information about the PutAttributes SimpleDB operation.
+    # The expected parameter is a hash containing {"name" => value} where value
+    # is a specific value, or :exists if you want to check for the attribute's
+    # presence. Only the first element in the hash is used.
     #
     # raises an SDBException if the call returns an error code.
-    def put_attributes( domain_name, item_name, attributes=nil ) 
-      sdb_response_xml = execute_with_retries( Request::PutAttributesRequest.new( domain_name.to_s, item_name.to_s, attributes, @access_key_id, @secret_key ) )      
+    def put_attributes( domain_name, item_name, attributes=nil, expected=nil)
+      sdb_response_xml = execute_with_retries( Request::PutAttributesRequest.new( domain_name.to_s, item_name.to_s, attributes, expected, @access_key_id, @secret_key ) )
       sdb_response = SDBResponse.build_from_xml_document( sdb_response_xml )
 
       if sdb_response.error_code 
